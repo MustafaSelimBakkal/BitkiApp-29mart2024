@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.rtl.min.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-success-subtle">
+        <div class="container">
+            <a class="navbar-brand" href="/Anasayfa">Bizim Botanik</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-5 mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Anasayfa">Anasayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/Anasayfa">İletişim</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-4" type="search" placeholder="Bitki Ara" aria-label="Search">
+                    <button class="btn btn-success" style="margin-left: 10px; width: 150px;" type="submit">Bitki Ara</button>
+                </form>
+                <ul class="navbar-nav me-auto mb-0 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Anasayfa">Giriş Yap</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" href="/Anasayfa">Kayıt Ol</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    @RenderBody()
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+.mt-6{
+    margin-top: 80px;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.card{
+    height: 500px;
+}
+
+.card .btn{
+    margin-bottom: 10px;
+}
+.carousel-item img{
+    height: 550px;
+}
+
+.col-md-3{
+    margin-top: 20px;
+}
+
+.col-md-4{
+    margin-top: 20px;
+}
+
+.col-md-4 img{
+    width: 287px;
+    height: 287px;
+}
+
+col-md-9 p{
+    
+}

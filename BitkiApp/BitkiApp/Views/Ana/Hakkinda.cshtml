@@ -1,0 +1,24 @@
+﻿@model Cicek
+<head>
+    <title>Bitki App</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="card mb-3 mt-5" style="width: 100%;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="/img/@(Model.Resim)" class="card-img" style="width:500px; height:600px;" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title" style="margin-left:80px;">@Model.Ad</h5>
+                        <p class="card-text" style="margin-left:80px;">@Model.Aciklama</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

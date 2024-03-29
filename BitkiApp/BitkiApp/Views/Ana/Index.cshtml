@@ -1,0 +1,96 @@
+﻿@model AnaSayfaViewModel
+<head>
+    <title>Bizim Botanik</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="container mt-6 ">
+        <p class="display-7 text-center text-danger">En Çok Satanlar</p>
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                @for (int i = 0; i < Model.EnCokSatanMi.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@(i)" class="active" aria-current="true" aria-label="Slide @(i + 1)"></button>
+                    }
+                    else
+                    {
+
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@(i)" aria-label="Slide @(i + 1)"></button>
+                    }
+                }
+            </div>
+            <div class="carousel-inner">
+                @for (int i = 0; i < Model.EnCokSatanMi.Count; i++)
+                {
+                    if (i == 0)
+                    {
+
+                        <div class="carousel-item active">
+
+                            <img src="/img/@(Model.EnCokSatanMi[i].SliderResmi)" class="d-block w-100" alt="...">
+
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="carousel-item">
+
+                            <img src="/img/@(Model.EnCokSatanMi[i].SliderResmi)" class="d-block w-100" alt="...">
+
+                        </div>
+                    }
+                }
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="/Lisetele" class="list-group-item list-group-item-action" aria-current="true">
+                        Tüm Bitkiler
+                    </a>
+                    @foreach (var kategori in Model.Kategoriler)
+                    {
+                        <a href="/ana/Listele/@(kategori.Id)" class="list-group-item list-group-item-action">@kategori.Ad</a>
+                    }
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <p class="display-7 text-center text-danger">Haftanın Ürünleri</p>
+                <div class="row">
+                    @foreach (var cicek in Model.HaftaninUrunuMu)
+                    {
+                        <div class="col-md-4">
+                            <div class="card" style="width: 18rem;">
+                                <img src="/img/@(cicek.Resim)" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">@cicek.Ad</h5>
+                                    <p class="card-text">@cicek.Aciklama</p>
+                                    <a href="/ana/Hakkinda/@(cicek.Id)" class="btn btn-primary">Detaya Git</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>

@@ -1,0 +1,61 @@
+﻿@model ListeleViewModel
+<head>
+    <title>Bizim Botanik</title>
+    <link rel="stylesheet" href="/css/styletwo.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 mt-6">
+                <div class="list-group">
+                    <a href="/Listele" class="list-group-item list-group-item-action" aria-current="true">
+                        Tüm Bitkiler
+                    </a>
+                    @foreach (var kategori in Model.Kategoriler)
+                    {
+                        if (ViewBag.kategoriId == kategori.Id)
+                        {
+                            <a href="/ana/Listele/@(kategori.Id)" class="list-group-item list-group-item-action active">@kategori.Ad</a>
+                        }
+                        else
+                        {
+                            <a href="/ana/Listele/@(kategori.Id)" class="list-group-item list-group-item-action">@kategori.Ad</a>
+                        }
+                        
+                    }
+                </div>
+            </div>
+
+            <div class="col-md-9 mt-6">
+                <div class="row">
+                    @if (Model.Cicekler.Count == 0)
+                    {
+                        <div class="alert alert-info">
+                            @Model.Kategori.Ad kategorisinde ürün bulunmamaktadadır.
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="display-7 text-center text-danger">@Model.Kategori.Ad Ürünleri</p>
+                        foreach (var cicek in Model.Cicekler)
+                        {
+                            <div class="col-lg-6 mb-3">
+                                <div class="card py-4 px-2">
+                                    <img src="/img/@(cicek.Resim)" style="margin:auto; height:400px; width:350px" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">@cicek.Ad</h5>
+                                        <h4 class="card-title text-info">@cicek.Aciklama</h4>
+                                        <a href="/ana/Hakkinda/@(cicek.Id)" class="btn btn-primary">Detayı Gör</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>

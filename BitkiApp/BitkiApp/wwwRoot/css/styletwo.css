@@ -1,0 +1,22 @@
+.mt-6{
+    margin-top: 200px;
+}
+
+.col-md-4 img{
+    width: 287px;
+    height: 287px;
+}
+
+.col-md-9 img {
+    width: 287px;
+    height: 287px;
+}
+
+.card{
+    margin-bottom: 10px;
+}
+
+.card img {
+        width: 287px;
+        height: 287px;
+}
